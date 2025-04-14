@@ -42,7 +42,7 @@ This project is configured for easy deployment to GitHub Pages:
 
 1. Push your code to a GitHub repository
 2. GitHub Actions will automatically deploy the game to GitHub Pages
-3. Your game will be available at `https://jimmyu2foru18.github.io/Chair-Cheese/`
+3. Your game will be available at `[https://jimmyu2foru18.github.io/Chair-Cheese/](https://jimmyu2foru18.github.io/Chair-Cheese/)`
 
 Alternatively, you can manually deploy:
 
