@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChairCheese - Slice the Cheese!</title>
+    <link rel="stylesheet" href="new_style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="ui-overlay">
+            <div id="start-screen" class="screen">
+                <h1>CHAIR CHEESE</h1>
+                <button id="startButton">Start Slicing!</button>
+                <div id="instructions">
+                    <p>Slice the flying cheese with your cursor!</p>
+                    <p>Avoid the bombs!</p>
+                    <p>Miss 5 cheese pieces and it's game over!</p>
+                </div>
+            </div>
+            
+            <div id="game-ui" class="hidden">
+                <div id="score-container">
+                    <div id="score">Cheese: 0</div>
+                    <div id="lives">Lives: 5</div>
+                </div>
+                <div id="powerup-container">
+                    <div id="multiplier" class="hidden"></div>
+                    <div id="powerup" class="hidden"></div>
+                </div>
+                <div id="combo-display" class="hidden"></div>
+            </div>
+            
+            <div id="game-over" class="screen hidden">
+                <h2>GAME OVER!</h2>
+                <div id="final-score">Final Score: 0</div>
+                <button id="restart-button">Play Again</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="new_game.js"></script>
+</body>
+</html>

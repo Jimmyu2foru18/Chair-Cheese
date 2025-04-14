@@ -1,0 +1,82 @@
+body {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M8,8 L24,24 M8,24 L24,8" stroke="%23FFFFFF" stroke-width="2" stroke-linecap="round"/></svg>'), auto;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+#ui {
+    font-family: 'Arial', sans-serif;
+    color: #ffd700;
+    text-shadow: 2px 2px 2px #000;
+    pointer-events: none;
+    font-size: 1.2em;
+}
+
+#gameInfo {
+    transition: all 0.3s ease;
+}
+
+#scoreDisplay, #livesDisplay, #multiplierDisplay, #powerUpDisplay {
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#scoreDisplay {
+    color: #FFD700;
+}
+
+#livesDisplay {
+    color: #FF6347;
+}
+
+#multiplierDisplay {
+    color: #8B4513;
+    font-weight: bold;
+}
+
+#powerUpDisplay {
+    color: #00FFFF;
+    font-weight: bold;
+}
+
+button {
+    pointer-events: all;
+    padding: 12px 25px;
+    font-size: 1.4em;
+    background: #8B4513;
+    border: 3px solid #FFD700;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    transition: all 0.2s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2000;
+}
+
+button:hover {
+    background: #A0522D;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+#instructions {
+    opacity: 0.8;
+    transition: opacity 0.5s ease;
+}
+
+#instructions:hover {
+    opacity: 1;
+}

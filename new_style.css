@@ -1,0 +1,221 @@
+/* ChairCheese Game - Main Stylesheet */
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    overflow: hidden;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M8,8 L24,24 M8,24 L24,8" stroke="%23000000" stroke-width="2" stroke-linecap="round"/></svg>'), auto;
+}
+
+/* Game Container */
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Canvas */
+#gameCanvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* UI Overlay */
+#ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Screen Styles (Start, Game Over) */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.5s ease;
+}
+
+/* Start Screen */
+#start-screen h1 {
+    font-size: 5rem;
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    margin-bottom: 2rem;
+    animation: pulse 2s infinite;
+}
+
+/* Game UI */
+#game-ui {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+#score-container {
+    display: flex;
+    gap: 1rem;
+}
+
+#score, #lives {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+#score {
+    color: #FFD700;
+}
+
+#lives {
+    color: #FF6347;
+}
+
+#powerup-container {
+    display: flex;
+    gap: 1rem;
+}
+
+#multiplier, #powerup {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+#multiplier {
+    color: #FFA500;
+}
+
+#powerup {
+    color: #00FFFF;
+}
+
+/* Combo Display */
+#combo-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFD700;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#combo-display.active {
+    opacity: 1;
+    transform: translate(-50%, -70%);
+}
+
+/* Game Over Screen */
+#game-over h2 {
+    font-size: 4rem;
+    color: #FF6347;
+    text-shadow: 0 0 10px rgba(255, 99, 71, 0.7);
+    margin-bottom: 1rem;
+}
+
+#final-score {
+    font-size: 2rem;
+    color: #FFD700;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+button {
+    background-color: #8B4513;
+    color: white;
+    border: 3px solid #FFD700;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    pointer-events: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+    background-color: #A0522D;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Instructions */
+#instructions {
+    color: white;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 600px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #start-screen h1 {
+        font-size: 3rem;
+    }
+    
+    #game-over h2 {
+        font-size: 2.5rem;
+    }
+    
+    button {
+        padding: 0.8rem 1.6rem;
+        font-size: 1.2rem;
+    }
+    
+    #instructions {
+        font-size: 1rem;
+    }
+}
